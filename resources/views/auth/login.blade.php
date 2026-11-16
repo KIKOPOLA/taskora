@@ -346,6 +346,12 @@
             </div>
             
             <!-- Error Messages -->
+            @if (session('error'))
+                <div class="error-message">
+                    <i class="fas fa-circle-exclamation"></i>
+                    <div>{{ session('error') }}</div>
+                </div>
+            @endif
             @if ($errors->any())
                 <div class="error-message">
                     <i class="fas fa-circle-exclamation"></i>
