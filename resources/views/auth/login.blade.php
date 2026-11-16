@@ -35,55 +35,69 @@
         }
         
         .login-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: #000000;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
             padding: 40px;
             transition: all 0.3s ease;
             overflow: hidden;
         }
         
         .login-card:hover {
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95);
+            border-color: #374151;
             transform: translateY(-2px);
         }
         
         .login-header {
             text-align: center;
-            margin-bottom: 0;
+            margin-bottom: 25px;
             padding-bottom: 25px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #1f2937;
         }
         
         .logo {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #000;
-            padding: 12px;
-            border-radius: 10px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
+            background: transparent;
+            padding: 0;
+            width: auto;
+        }
+        
+        .logo a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo a:hover {
+            transform: scale(1.03);
         }
         
         .logo img {
             max-width: 220px;
+            max-height: 80px;
             height: auto;
+            width: auto;
             object-fit: contain;
+            display: block;
         }
         
         .login-header h1 {
             font-size: 28px;
-            color: #0f172a;
+            color: #ffffff;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
         
         .login-header p {
-            color: #4b5563;
+            color: #cbd5e1;
             font-size: 15px;
             line-height: 1.5;
         }
@@ -97,7 +111,7 @@
             margin-bottom: 8px;
             font-size: 14px;
             font-weight: 500;
-            color: #374151;
+            color: #ffffff;
         }
         
         input[type="email"],
@@ -105,13 +119,21 @@
         input[type="text"] {
             width: 100%;
             padding: 12px 14px;
-            border: 2px solid #e5e7eb;
+            background-color: #111827;
+            border: 1.5px solid #374151;
             border-radius: 8px;
             font-size: 14px;
+            color: #ffffff;
             transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             font-family: inherit;
             box-sizing: border-box;
             display: block;
+        }
+        
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="text"]::placeholder {
+            color: #6b7280;
         }
         
         input[type="email"]:focus,
@@ -119,14 +141,15 @@
         input[type="text"]:focus {
             outline: none;
             border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background-color: #f8faff;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+            background-color: #1f2937;
+            color: #ffffff;
         }
         
         input[type="email"]:hover,
         input[type="password"]:hover,
         input[type="text"]:hover {
-            border-color: #d1d5db;
+            border-color: #4b5563;
         }
         
         .password-group {
@@ -171,7 +194,7 @@
         }
         
         .toggle-password:hover {
-            color: #3b82f6;
+            color: #60a5fa;
             transform: translateY(-50%) scale(1.1);
         }
         
@@ -192,6 +215,7 @@
             align-items: center;
             gap: 6px;
             cursor: pointer;
+            color: #e2e8f0;
         }
         
         input[type="checkbox"] {
@@ -199,23 +223,25 @@
             width: 16px;
             height: 16px;
             accent-color: #3b82f6;
+            background-color: #111827;
+            border: 1px solid #4b5563;
         }
         
         .forgot-link {
-            color: #3b82f6;
+            color: #60a5fa;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .forgot-link:hover {
-            color: #1e40af;
+            color: #93c5fd;
             text-decoration: underline;
         }
         
         .btn-login {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
             border: none;
             border-radius: 8px;
@@ -232,8 +258,8 @@
         
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
         }
         
         .btn-login:active {
@@ -245,7 +271,7 @@
             align-items: center;
             gap: 12px;
             margin: 24px 0;
-            color: #d1d5db;
+            color: #94a3b8;
             font-size: 13px;
         }
         
@@ -254,31 +280,31 @@
             content: '';
             flex: 1;
             height: 1px;
-            background-color: #e5e7eb;
+            background-color: #374151;
         }
         
         .signup-prompt {
             text-align: center;
-            color: #6b7280;
+            color: #cbd5e1;
             font-size: 14px;
         }
         
         .signup-link {
-            color: #3b82f6;
+            color: #60a5fa;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
         
         .signup-link:hover {
-            color: #1e40af;
+            color: #93c5fd;
             text-decoration: underline;
         }
         
         .error-message {
-            background-color: #fee2e2;
-            border: 1px solid #fecaca;
-            color: #991b1b;
+            background-color: rgba(239, 68, 68, 0.15);
+            border: 1px solid #ef4444;
+            color: #fca5a5;
             padding: 12px;
             border-radius: 6px;
             margin-bottom: 20px;
@@ -289,7 +315,7 @@
         }
         
         .error-message i {
-            color: #dc2626;
+            color: #f87171;
         }
         
 
@@ -311,7 +337,9 @@
             <!-- Logo/Branding Header -->
             <div class="login-header">
                 <div class="logo">
-                    <img src="{{ asset('images/Taskora Logo.png') }}" alt="Taskora Logo">
+                    <a href="/">
+                        <img src="{{ asset('images/Taskora Logo.png') }}" alt="Taskora Logo">
+                    </a>
                 </div>
                 <h1>Welcome Back</h1>
                 <p>Sign in to your account and start managing your projects</p>

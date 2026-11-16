@@ -77,38 +77,38 @@
 
 <body class="font-sans antialiased bg-white text-neutral-900">
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200">
+    <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-neutral-800 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="/" class="flex items-center gap-2 group transition-transform hover:scale-105">
                     <img src="<?php echo e(asset('images/Taskora Logo.png')); ?>" alt="Taskora Logo"
-                        class="h-16 w-auto drop-shadow-sm">
+                        class="h-16 w-auto drop-shadow-md">
                 </a>
                 <div class="flex items-center gap-3 md:gap-6">
                     <?php if(auth()->guard()->check()): ?>
                         <a href="<?php echo e(url('/dashboard')); ?>"
-                            class="px-4 py-2 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors">
+                            class="px-4 py-2 text-sm font-semibold text-neutral-200 hover:text-white transition-colors">
                             <i class="fas fa-chart-line mr-2"></i>
                             Dashboard
                         </a>
                         <form method="POST" action="<?php echo e(route('logout')); ?>" class="m-0">
                             <?php echo csrf_field(); ?>
                             <button type="submit"
-                                class="px-4 py-2 text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-colors">
+                                class="px-4 py-2 text-sm font-semibold text-neutral-200 hover:text-white transition-colors">
                                 <i class="fas fa-sign-out-alt mr-2"></i>
                                 Logout
                             </button>
                         </form>
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>"
-                            class="hidden sm:inline-block px-4 py-2 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors">
-                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-neutral-200 hover:text-white transition-colors">
+                            <i class="fas fa-sign-in-alt"></i>
                             Sign In
                         </a>
                         <?php if(Route::has('register')): ?>
                             <a href="<?php echo e(route('register')); ?>"
-                                class="px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg active:scale-95 text-sm">
-                                <i class="fas fa-rocket mr-2"></i>
+                                class="px-6 py-2.5 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg active:scale-95 text-sm inline-flex items-center gap-2">
+                                <i class="fas fa-rocket"></i>
                                 Get Started
                             </a>
                         <?php endif; ?>

@@ -62,10 +62,12 @@ class TaskUpdateController extends Controller
         return back()->with('success', 'Update task berhasil disimpan dengan file.');
     }
 
-    public function downloadFile(TaskFile $file): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function downloadFile(TaskFile $taskFile): \Symfony\Component\HttpFoundation\StreamedResponse
     {
-        $this->authorize('view', $file->taskUpdate->task);
+        if (! Storage::disk('public')->exists($taskFile->file_path)) {
+            abort(404, 'File tidak ditemukan di storage.');
+        }
 
-        return Storage::disk('public')->download($file->file_path, $file->file_name);
+        return Storage::disk('public')->download($taskFile->file_path, $taskFile->file_name);
     }
 }

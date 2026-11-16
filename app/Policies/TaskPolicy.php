@@ -25,6 +25,11 @@ class TaskPolicy
             return true;
         }
 
+        // PM yang membuat project bisa melihat semua task di project tersebut
+        if ($user->role === 'pm' && $task->project->created_by === $user->id) {
+            return true;
+        }
+
         // Check if user is member of the project
         $isProjectMember = $task->project->members()->where('user_id', $user->id)->exists();
         $isProjectCreator = $task->project->created_by === $user->id;
